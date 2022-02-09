@@ -4,11 +4,15 @@
 
 这里使用的操作系统是：macOS
 
+### 下载 jeecg-boot
+
 下载 jeecg-boot 源代码：
 
 ```sh
 $ git clone https://github.com/jeecgboot/jeecg-boot.git
 ```
+
+### 需要的软件
 
 确保已经安装了：
 
@@ -16,6 +20,8 @@ $ git clone https://github.com/jeecgboot/jeecg-boot.git
 - maven
 - node.js
 - docker / docker-compose
+
+### 编辑配置文件
 
 修改配置文件 `jeecg-boot/jeecg-boot-module-system/src/main/resources/application-prod.yml `
 
@@ -52,6 +58,8 @@ knife4j:
   #开启生产环境屏蔽
   production: false
 ```
+
+### 构建
 
 构建过程：
 

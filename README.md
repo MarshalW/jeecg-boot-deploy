@@ -1,10 +1,13 @@
 # jeecg boot deploy
 
-下载本项目：
+在 jeecg-boot 项目构建的基础上（按照官方文档构建前端 dist 目录和后端 jar 文件），可以使用本项目的脚本，自动在本地生成可运行的服务（使用 docker compose）：
 
-```sh
-$ git clone https://github.com/MarshalW/jeecg-boot-deploy.git
-```
+- 前端
+- 后端
+- mysql
+- redis
+
+
 
 ## 在 jeecg-boot 项目的操作
 
@@ -90,6 +93,12 @@ $ yarn run build
 ```
 
 ## 在本项目中的操作
+
+下载本项目：
+
+```sh
+$ git clone https://github.com/MarshalW/jeecg-boot-deploy.git
+```
 
 ### backend
 

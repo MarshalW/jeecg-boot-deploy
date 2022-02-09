@@ -79,6 +79,8 @@ $ mvn package -P prod
 
 ## backend
 
+### 获取 jeecg-boot backend 文件
+
 编辑 `./get_backend.sh`，设置 sql 脚本和 jar 文件的路径：
 
 ```sh
@@ -93,8 +95,6 @@ jar_path=../../../jeecg-boot/jeecg-boot/jeecg-boot-module-system/target/jeecg-bo
 ```sh
 $ ./get_backend.sh
 ```
-
-### 获取 jeecg-boot backend 文件
 
 ### 构建 jeecg-boot backend dockder image
 
@@ -112,5 +112,7 @@ $ docker build \
 ```sh
 docker-compose up -d
 ```
+
+然后就可以通过 [http://localhost:8080/jeecg-boot](http://localhost:8080/jeecg-boot) 访问后端了。
 
 ## frontend

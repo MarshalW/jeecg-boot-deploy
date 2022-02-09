@@ -1,5 +1,11 @@
 # jeecg boot deploy
 
+下载本项目：
+
+```sh
+$ git clone https://github.com/MarshalW/jeecg-boot-deploy.git
+```
+
 ## 和 jeecg-boot 项目的衔接
 
 这里使用的操作系统是：macOS
@@ -64,14 +70,33 @@ knife4j:
 构建过程：
 
 ```sh
-# install 
-$ mvn install -P prod 
+# install
+$ mvn install -P prod
 
 # package
 $ mvn package -P prod
 ```
 
 ## backend
+
+编辑 `./get_backend.sh`，设置 sql 脚本和 jar 文件的路径：
+
+```sh
+#!/bin/bash
+
+script_path=../../../jeecg-boot/jeecg-boot/db/jeecgboot-mysql-5.7.sql
+jar_path=../../../jeecg-boot/jeecg-boot/jeecg-boot-module-system/target/jeecg-boot-module-system-2.4.6.jar
+```
+
+在本项目下执行命令将 sql 脚本和 jar 文件下载到本项目的 backend 目录下：
+
+```sh
+$ ./get_backend.sh
+```
+
+### 获取 jeecg-boot backend 文件
+
+### 构建 jeecg-boot backend dockder image
 
 构建 docker image：
 

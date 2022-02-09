@@ -7,8 +7,6 @@
 - mysql
 - redis
 
-
-
 ## 在 jeecg-boot 项目的操作
 
 这里使用的操作系统是：macOS
@@ -27,7 +25,7 @@ $ git clone https://github.com/jeecgboot/jeecg-boot.git
 
 - java sdk
 - maven
-- node.js
+- node.js / yarn
 - docker / docker-compose
 
 ### 编辑配置文件

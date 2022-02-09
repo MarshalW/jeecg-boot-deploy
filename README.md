@@ -6,7 +6,7 @@
 $ git clone https://github.com/MarshalW/jeecg-boot-deploy.git
 ```
 
-## 和 jeecg-boot 项目的衔接
+## 在 jeecg-boot 项目的操作
 
 这里使用的操作系统是：macOS
 
@@ -89,9 +89,11 @@ $ yarn install
 $ yarn run build
 ```
 
-## backend
+## 在本项目中的操作
 
-### 获取 jeecg-boot backend 文件
+### backend
+
+#### 获取 jeecg-boot backend 文件
 
 编辑 `./get_backend.sh`，设置 sql 脚本和 jar 文件的路径：
 
@@ -108,7 +110,7 @@ jar_path=../../../jeecg-boot/jeecg-boot/jeecg-boot-module-system/target/jeecg-bo
 $ ./get_backend.sh
 ```
 
-### 构建 jeecg-boot backend dockder image
+#### 构建 jeecg-boot backend dockder image
 
 构建 docker image：
 
@@ -121,9 +123,9 @@ $ docker build \
     -t jeecg-boot-backend
 ```
 
-## frontend
+### frontend
 
-### 获取 jeecg-boot frontend 文件
+#### 获取 jeecg-boot frontend 文件
 
 编辑 `./get_frontend.sh`，设置生成 dist 的路径：
 
@@ -131,7 +133,7 @@ $ docker build \
 $ ./get_frontend.sh
 ```
 
-### 构建 jeecg-boot frontend docker image
+#### 构建 jeecg-boot frontend docker image
 
 构建 docker image:
 
@@ -144,15 +146,27 @@ $ docker build \
     -t jeecg-boot-frontend
 ```
 
-## 运行
+### 运行
 
 运行 frontend/backend/mysql/redis:
 
 ```sh
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 然后就可以通过：
 
 - [http://localhost:8080/jeecg-boot](http://localhost:8080/jeecg-boot) 访问后端
 - [http://localhost:3000/](http://localhost:3000/) 访问前端
+
+### 释放
+
+关闭所有服务（frontend/backend/mysql/redis）
+
+```sh
+# 关闭服务
+$ docker-compose down
+
+# 删除卷
+$ docker volume rm jeecg-boot-deploy_mysqldb
+```

@@ -39,5 +39,11 @@ services:
       - mysql
       - redis
 
+  frontend:
+    container_name: frontend
+    image: jeecg-boot-frontend
+    ports:
+      - 3000:80
+
 volumes:
   mysqldb:

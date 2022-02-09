@@ -161,12 +161,9 @@ $ docker-compose up -d
 
 ### 释放
 
-关闭所有服务（frontend/backend/mysql/redis）
+关闭所有服务（frontend/backend/mysql/redis），释放所有资源
 
 ```sh
 # 关闭服务
-$ docker-compose down
-
-# 删除卷
-$ docker volume rm jeecg-boot-deploy_mysqldb
+$ ./clear.sh
 ```

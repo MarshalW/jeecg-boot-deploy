@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  mysql:
+    container_name: mysql
+    image: "mysql:8.0.27"
+    restart: "unless-stopped"
+    command: --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+      --max_allowed_packet=128M
+      --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=db_example
+    volumes:
+      - mysqldb:/var/lib/mysql
+      - ./backend/scripts/jeecgboot-mysql-5.7.sql:/docker-entrypoint-initdb.d/1.sql
+    ports:
+      - 3306:3306
+
+  redis:
+    container_name: redis
+    image: redis:6.2.6-alpine
+    ports:
+      - 6379:6379
+    restart: always
+
+  backend:
+    container_name: backend
+    image: jeecg-boot-backend
+    ports:
+      - 8080:8080
+    environment:
+      - MYSQL_HOST=mysql
+      - REDIS_HOST=redis
+    depends_on:
+      - mysql
+      - redis
+
+volumes:
+  mysqldb:

@@ -18,7 +18,7 @@ $ git clone https://github.com/MarshalW/jeecg-boot-deploy.git
 $ git clone https://github.com/jeecgboot/jeecg-boot.git
 ```
 
-### 需要的软件
+### 需要准备的软件
 
 确保已经安装了：
 
